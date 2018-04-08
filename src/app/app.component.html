@@ -1,0 +1,32 @@
+<style>
+    a {
+      margin:10px 10px 10px 10px;
+    }
+    h3{
+      text-align: center;
+    }
+    .container{
+      margin:auto;
+      width:50%
+    }
+    .board{
+      margin:auto;
+    }
+    td{
+        border:1px solid black;
+        margin:auto;
+    }
+</style>
+<h3>{{title}}</h3>
+<h4>{{steps}}</h4>
+<div class = "container">
+    <table class="board">
+        <tbody>
+            <tr *ngFor="let r of board; let i = index">
+                <td *ngFor="let c of  r; let j = index">
+                    <a (click)="updateBoard(board,n,m,i,j,$event)">{{board[i][j].count}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
